@@ -1,0 +1,10 @@
+{ /* neoebuild script */
+	/* default
+baseDir:"."   
+destDir:"dist"
+debug:false	target:9	source:9 release:9
+*/
+	prjs : [
+		[ bomberman . { srcDir : [ src res ] } ]
+	]
+}

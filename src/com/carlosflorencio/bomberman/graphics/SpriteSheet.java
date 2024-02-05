@@ -23,8 +23,8 @@ public class SpriteSheet {
 	
 	private void load() {
 		try {
-			URL a = SpriteSheet.class.getResource(_path);
-			BufferedImage image = ImageIO.read(a);
+		//	URL a = SpriteSheet.class.getResource(_path);
+			BufferedImage image = ImageIO.read( getClass().getClassLoader().getResourceAsStream(_path));
 			int w = image.getWidth();
 			int h = image.getHeight();
 			image.getRGB(0, 0, w, h, _pixels, 0, w);

@@ -37,10 +37,10 @@ public class FileLevel extends Level {
 	@Override
 	public void loadLevel(String path) throws LoadLevelException {
 		try {
-			URL absPath = FileLevel.class.getResource("/" + path);
+	//		URL absPath = FileLevel.class.getResource("/" + path);
 			
 			BufferedReader in = new BufferedReader(
-			        new InputStreamReader(absPath.openStream()));
+			        new InputStreamReader(getClass().getClassLoader().getResourceAsStream(path)));
 
 			String data = in.readLine();
 			StringTokenizer tokens = new StringTokenizer(data);
